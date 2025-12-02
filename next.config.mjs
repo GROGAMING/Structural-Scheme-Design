@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // keep this empty for now – no custom options
+  // no custom options for now
 };
 
 export default nextConfig;
