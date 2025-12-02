@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  api: {
-    bodyParser: {
-      sizeLimit: '20mb'
-    }
-  }
+  // keep this empty for now – no custom options
 };
 
 export default nextConfig;
