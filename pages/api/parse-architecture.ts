@@ -4,9 +4,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import formidable, { File } from 'formidable';
 import { ParsedArchitecture } from '../../lib/types';
 
+// Route-level config for file uploads
 export const config = {
   api: {
-    bodyParser: false
+    bodyParser: false,
+    sizeLimit: '20mb'
   }
 };
 
@@ -80,6 +82,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json({ architecture: mockArchitecture });
   } catch (error: any) {
     console.error(error);
-    return res.status(500).json({ error: 'Failed to parse architectural drawing.', details: error?.message });
+    return res.status(500).json({
+      error: 'Failed to parse architectural drawing.',
+      details: error?.message
+    });
   }
 }
